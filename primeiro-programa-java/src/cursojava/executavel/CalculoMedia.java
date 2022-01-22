@@ -19,9 +19,15 @@ public class CalculoMedia {
 		double media = (dNota1 + dNota2 + dNota3 + dNota4) / 4;
 		
 		if (media >= 50) {
-			
+			if (media >=70) {
+				JOptionPane.showInternalMessageDialog(null, "Aluno está aprovado com média: " + media);
+			}else {
+				JOptionPane.showInternalMessageDialog(null, "Aluno em recuperação com media: " + media);
+			}
+		}else {
+			JOptionPane.showInternalMessageDialog(null, "Aluno está reprovado com media: " + media);
 		}
 			
-		JOptionPane.showInternalMessageDialog(null, "A média é: " + media);
+		
 	}
 }
