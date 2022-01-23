@@ -20,7 +20,7 @@ public class ProgramaPrincipal {
 		String matricula = JOptionPane.showInputDialog("Data da Matricula?");
 		String serie = JOptionPane.showInputDialog("Serie do Aluno?");
 		
-		String disciplina1 = JOptionPane.showInputDialog("Disciplina 1?");
+		/*String disciplina1 = JOptionPane.showInputDialog("Disciplina 1?");
 		String nota1 = JOptionPane.showInputDialog("Nota 1");
 		
 		String disciplina2 = JOptionPane.showInputDialog("Disciplina 2?");
@@ -30,7 +30,7 @@ public class ProgramaPrincipal {
 		String nota3 = JOptionPane.showInputDialog("Nota 3");
 		
 		String disciplina4 = JOptionPane.showInputDialog("Disciplina 4?");
-		String nota4 = JOptionPane.showInputDialog("Nota 4");
+		String nota4 = JOptionPane.showInputDialog("Nota 4");*/
 		
 		
 		Aluno aluno1 = new Aluno();
@@ -44,8 +44,49 @@ public class ProgramaPrincipal {
 		aluno1.setNomeEscola(nomeEscola);
 		aluno1.setDataMatricula(matricula);
 		aluno1.setSerieMatriculado(serie);
+		
+		for (int pos = 1; pos <= 4; pos++) {
+			String nomeDisciplina = JOptionPane.showInputDialog("Nome da Disciplina "+pos+" ?");
+			String notaDisciplina = JOptionPane.showInputDialog("Nota da Disciplina "+pos+" ?");
 			
-		aluno1.getDisciplina().setNota1(Double.parseDouble(nota1));		
+			Disciplina disciplina = new Disciplina();
+			disciplina.setDisciplina(nomeDisciplina);
+			disciplina.setNota(Double.valueOf(notaDisciplina));
+			
+			aluno1.getDisciplinas().add(disciplina);
+		}
+		
+		/*Disciplina disciplina_1 = new Disciplina();
+		disciplina_1.setDisciplina("Banco de Dados");
+		disciplina_1.setNota(90);
+		
+		/*aluno1.getDisciplinas().add(disciplina_1);*/
+		
+		/*Disciplina disciplina_2 = new Disciplina();
+		disciplina_2.setDisciplina("Matemática");
+		disciplina_2.setNota(90);
+		
+		/*aluno1.getDisciplinas().add(disciplina_2);*/
+		
+		/*Disciplina disciplina_3 = new Disciplina();
+		disciplina_3.setDisciplina("Geográfia");
+		disciplina_3.setNota(80);
+		
+		/*aluno1.getDisciplinas().add(disciplina_3);*/
+		
+		/*Disciplina disciplina_4 = new Disciplina();
+		disciplina_4.setDisciplina("Java WEB");
+		disciplina_4.setNota(80);
+		
+		/*aluno1.getDisciplinas().add(disciplina_4);*/
+		
+		/*aluno1.getDisciplinas().add(disciplina_1);
+		aluno1.getDisciplinas().add(disciplina_2);
+		aluno1.getDisciplinas().add(disciplina_3);
+		aluno1.getDisciplinas().add(disciplina_4);
+		
+			
+		/*aluno1.getDisciplina().setNota1(Double.parseDouble(nota1));		
 		aluno1.getDisciplina().setNota2(Double.parseDouble(nota2));		
 		aluno1.getDisciplina().setNota3(Double.parseDouble(nota3));		
 		aluno1.getDisciplina().setNota4(Double.parseDouble(nota4));
@@ -53,7 +94,7 @@ public class ProgramaPrincipal {
 		aluno1.getDisciplina().setDisciplina1(disciplina1);
 		aluno1.getDisciplina().setDisciplina2(disciplina2);
 		aluno1.getDisciplina().setDisciplina3(disciplina3);
-		aluno1.getDisciplina().setDisciplina4(disciplina4);
+		aluno1.getDisciplina().setDisciplina4(disciplina4);*/
 		
 		/*System.out.println("Nome é			  	: " + aluno1.getNome());
 		System.out.println("Idade é			  	: " + aluno1.getIdade());
@@ -67,11 +108,15 @@ public class ProgramaPrincipal {
 		System.out.println("Média de notas: " + aluno1.getMediaNota());
 		System.out.println("O Aluno foi aprovado? " + aluno1.getAlunoAprovado());*/
 		
+		System.out.println(aluno1);
+		System.out.println("Média do Aluno= " + aluno1.getMediaNota());
+		System.out.println("Resultado= " + aluno1.getAlunoAprovado2());		
 		
-		System.out.println(aluno1.toString());
+		
+		/*System.out.println(aluno1.toString());
 		System.out.println("O Aluno foi " + (aluno1.getAlunoAprovado() ? "Aprovado" : "Reprovado"));/*Usando operador ternário*/
 		
-		System.out.println("Situação do Aluno: " + aluno1.getAlunoAprovado2());
+		/*System.out.println("Situação do Aluno: " + aluno1.getAlunoAprovado2());
 		
 		Aluno aluno = new Aluno();
 		System.out.println(aluno.toString());/*Descrição do objeto na memória*/
