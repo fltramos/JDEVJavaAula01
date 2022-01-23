@@ -1,5 +1,7 @@
 package cursojava.classes;
 
+import java.util.Objects;
+
 public class Aluno {
 
 	private String nome;
@@ -13,6 +15,17 @@ public class Aluno {
 	private String nomeEscola;
 	private String serieMatriculado;
 	
+	private Disciplina disciplina = new Disciplina();
+	
+	public void setDisciplina(Disciplina disciplina) {
+		this.disciplina = disciplina;
+	}
+	
+	public Disciplina getDisciplina() {
+		return disciplina;
+	}
+	
+
 	public Aluno() {
 		
 	}
@@ -106,6 +119,55 @@ public class Aluno {
 		this.serieMatriculado = serieMatriculado;
 	}
 	
+	/*Método que calcula e retorna a média do Aluno*/
+	public double getMediaNota() {
+		return (disciplina.getNota1() + disciplina.getNota2() + disciplina.getNota3() + disciplina.getNota4()) / 4;
+	}
 	
+	/*Método se o Aluno foi aprovado -  usando boolean ou string*/
+	
+	public boolean getAlunoAprovado() {
+		double media = this.getMediaNota();
+		if (media >= 70) {
+			return true;			
+		}else {
+			return false;
+		}		
+	}
+	public String getAlunoAprovado2() {
+		double media = this.getMediaNota();
+		if (media >= 70) {
+			return "Aluno está aprovado!";			
+		}else {
+			return "Aluno está reprovado!";
+		}
+	}
+		
 
+	@Override
+	public String toString() {
+		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
+				+ registroGeral + ", numeroCPF=" + numeroCPF + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
+				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
+				+ serieMatriculado + ", disciplina=" + disciplina + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(nome, numeroCPF);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Aluno other = (Aluno) obj;
+		return Objects.equals(nome, other.nome) && Objects.equals(numeroCPF, other.numeroCPF);
+	}
+	
+	
 }
