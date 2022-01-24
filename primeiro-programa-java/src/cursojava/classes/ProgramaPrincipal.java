@@ -56,6 +56,13 @@ public class ProgramaPrincipal {
 			aluno1.getDisciplinas().add(disciplina);
 		}
 		
+		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina?");
+		
+		if (escolha == 0) {
+			String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina: 1, 2, 3 ou 4?");
+			aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue()-1);
+		}
+		
 		/*Disciplina disciplina_1 = new Disciplina();
 		disciplina_1.setDisciplina("Banco de Dados");
 		disciplina_1.setNota(90);
