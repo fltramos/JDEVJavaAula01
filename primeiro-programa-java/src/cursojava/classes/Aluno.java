@@ -6,19 +6,11 @@ import java.util.Objects;
 
 import cursojava.constantes.StatusAluno;
 
-public class Aluno {
+public class Aluno extends Pessoa {
 
-	private String nome;
-	private int idade;
-	private String dataNascimento;
-	private String registroGeral;
-	private String numeroCPF;
-	private String nomeMae;
-	private String nomePai;
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
-	
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
 	public void setDisciplinas(List<Disciplina> disciplinas) {
@@ -163,7 +155,7 @@ public class Aluno {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCPF=" + numeroCPF + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + "]";
+				+ serieMatriculado + ", Salário=" + salario() + "]";
 	}
 
 	@Override
@@ -183,5 +175,19 @@ public class Aluno {
 		return Objects.equals(nome, other.nome) && Objects.equals(numeroCPF, other.numeroCPF);
 	}
 	
+	@Override //Identifica método sobreescrito
+	public boolean pessoaMaiorIdade() {
+		// TODO Auto-generated method stub
+		return idade >= 21;
+	}
 	
+	public String msgMaiorIdade() {
+		return this.pessoaMaiorIdade() ? "Aluno é maior de Idade." : "Aluno não é maior de Idade.";
+	}
+
+	@Override
+	public double salario() {
+		// TODO Auto-generated method stub
+		return 1700.22;
+	}
 }

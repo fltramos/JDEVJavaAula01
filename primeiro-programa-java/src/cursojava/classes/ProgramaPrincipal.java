@@ -14,8 +14,13 @@ public class ProgramaPrincipal {
 
 		String login = JOptionPane.showInputDialog("Informe o login: ");
 		String senha = JOptionPane.showInputDialog("Informe a senha: ");
+		
+		Secretario secretario = new Secretario();
+		secretario.setLogin(login);
+		secretario.setSenha(senha);
+		
 
-		if (login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin")) {
+		if (secretario.autenticar()) {
 
 			List<Aluno> alunos = new ArrayList<Aluno>();
 
@@ -137,6 +142,8 @@ public class ProgramaPrincipal {
 						+ aluno.getMediaNota());
 			}
 
+		}else {
+			JOptionPane.showConfirmDialog(null, "Acesso não permitido!!!");
 		}
 	}
 
