@@ -6,7 +6,9 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
+//import cursojava.interfaces.PermitirAcesso;
 
 public class ProgramaPrincipal {
 
@@ -15,12 +17,19 @@ public class ProgramaPrincipal {
 		String login = JOptionPane.showInputDialog("Informe o login: ");
 		String senha = JOptionPane.showInputDialog("Informe a senha: ");
 		
-		Secretario secretario = new Secretario();
+		/*Secretario secretario = new Secretario();
 		secretario.setLogin(login);
-		secretario.setSenha(senha);
+		secretario.setSenha(senha);*/
 		
+		//FuncaoAutenticacao autenticacao = new FuncaoAutenticacao();
+		
+		//PermitirAcesso permitirAcesso = new Secretario(login, senha);
+		
+		//if (permitirAcesso.autenticar())
+		//if (autenticacao.autenticarCursoJava(permitirAcesso))
+		//if (new FuncaoAutenticacao(permitirAcesso).autenticarCursoJava(permitirAcesso))
 
-		if (secretario.autenticar()) {
+		if (new FuncaoAutenticacao(new Secretario(login, senha)).autenticar()) {
 
 			List<Aluno> alunos = new ArrayList<Aluno>();
 
