@@ -3,7 +3,6 @@ package cursojava.executavel;
 public class Matriz {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int notas[][] = new int[2][3];
 		
 		notas[0][0] = 80;
