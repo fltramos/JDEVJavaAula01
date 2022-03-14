@@ -118,6 +118,8 @@ private Runnable thread2 = new Runnable() {
 			@Override
 			public void actionPerformed(ActionEvent e) {// Executa o clique no botão
 				
+				for (int qtd = 0; qtd < 100; qtd ++) { //Simula 100 envios em massa
+				
 				thread1Time = new Thread(thread1);
 				thread1Time.start();
 				
@@ -126,7 +128,7 @@ private Runnable thread2 = new Runnable() {
 				
 				jButton.setEnabled(false);
 				jButton2.setEnabled(true);
-				
+				}
 			}
 		});
 		
